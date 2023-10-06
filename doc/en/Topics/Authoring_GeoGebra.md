@@ -100,7 +100,21 @@ Notice two changes.  (1) there is a `remember` argument in the geogebra block ta
 3. We don't want to show the model answer of "remember" as part of the teacher's final answer (if available during the quiz) so [hide the input](../Authoring/Inputs.md#extra_option_hideanswer) from students with the STACK "extra option" `hideanswer` in the "remember" input.
 4. Values in _remember_ are not available to the PRT and can not be used to calculate values in STACK feedback.
 
-## 5. Polish and tidy the question.
+## 5. Control the appearance of the applet
+
+GeoGebra provides parameters for defining various properties of how an applet appears on a website. A complete list of the parameters can be seen on the [geoGebra.org](https://wiki.geogebra.org/en/Reference:GeoGebra_App_Parameters)
+
+For example, to have a smaller part of the applet displayed, now also transparent with a light blue border, add these lines to the geogebra question block:
+
+    [[geogebra set="c,m" watch="ans1" remember="A,B"]]
+    params["material_id"]="anr6ujyf";
+    params["width"]=800;
+    params["height"]=500;
+    params["borderColor"]="rgba(0,0,255,0.5)";
+    params["transparentGraphics"]=true;    
+    [[/geogebra]]
+
+## 6. Polish and tidy the question.
 
 Once you have the question working, you can add better feedback, add a worked solution, create random versions, and so on.  For example you could choose
 
